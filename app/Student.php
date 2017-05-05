@@ -22,8 +22,9 @@ class Student extends Model
         'student_id'
         ];
 
-    public function student_user()
+    public function user()
     {
-        return $this->hasMany('App\User','user_id');
+        return $this->belongsTo('App\User');
     }
+
 }

@@ -143,7 +143,13 @@
                         <ul class="list-unstyled">
                             <li><a href="{{route('students.index')}}">لیست دانش آموزان</a></li>
                             <li><a href="{{route('students.create')}}">افزودن دانش آموزان</a></li>
-                            <li><a href="">ویرایش دانش آموزان</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="has_sub">
+                        <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-invert-colors"></i> <span> مدیریت رمز دانش آموزان </span> <span class="menu-arrow"></span></a>
+                        <ul class="list-unstyled">
+                            <li><a href="{{route('students_login.index')}}">لیست رمز دانش آموزان</a></li>
                         </ul>
                     </li>
 
