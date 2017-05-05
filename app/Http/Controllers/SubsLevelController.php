@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\MainLevel;
+use App\SubsLevel;
 use Illuminate\Http\Request;
 
 class SubsLevelController extends Controller
@@ -13,7 +15,9 @@ class SubsLevelController extends Controller
      */
     public function index()
     {
-        //
+        $sub_lvl = SubsLevel::all();
+        $main_lvl = MainLevel::pluck('name','id')->all();
+        return view('admin.levels.subslvl.index',compact('sub_lvl','main_lvl'));
     }
 
     /**
@@ -34,7 +38,8 @@ class SubsLevelController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        SubsLevel::create($request->all());
+        return redirect()->back();
     }
 
     /**
@@ -56,7 +61,9 @@ class SubsLevelController extends Controller
      */
     public function edit($id)
     {
-        //
+        $sub = SubsLevel::findOrfail($id);
+        $main_lvl = MainLevel::pluck('name','id')->all();
+        return view('admin.levels.subslvl.edit',compact('sub','main_lvl'));
     }
 
     /**
@@ -68,7 +75,8 @@ class SubsLevelController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        SubsLevel::findOrfail($id)->update($request->all());
+        return redirect('admin/levels/subslvl');
     }
 
     /**
@@ -79,6 +87,7 @@ class SubsLevelController extends Controller
      */
     public function destroy($id)
     {
-        //
+        SubsLevel::findOrfail($id)->delete();
+        return redirect()->back();
     }
 }

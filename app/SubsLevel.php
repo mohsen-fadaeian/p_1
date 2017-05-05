@@ -11,4 +11,9 @@ class SubsLevel extends Model
         'order_subs',
         'mainlevel_id'
     ];
+
+    public function mainlevel()
+    {
+        return $this->belongsTo('App\MainLevel');
+    }
 }

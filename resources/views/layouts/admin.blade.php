@@ -160,6 +160,13 @@
                         </ul>
                     </li>
 
+                    <li class="has_sub">
+                        <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-invert-colors"></i> <span> لیست زیر مقاطع </span> <span class="menu-arrow"></span></a>
+                        <ul class="list-unstyled">
+                            <li><a href="{{route('subslvl.index')}}">لیست زیر مقاطع دانش آموزان</a></li>
+                        </ul>
+                    </li>
+
 
                     <li class="has_sub">
                         <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-view-list"></i> <span> Tables </span> <span class="menu-arrow"></span></a>
