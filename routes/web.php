@@ -11,6 +11,10 @@
 |
 */
 
+use App\SubsLevel;
+use App\Teacher;
+use Illuminate\Support\Facades\Input;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -27,5 +31,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('admin/levels/mainlvl','MainLevelController');
     Route::resource('admin/levels/subslvl','SubsLevelController');
     Route::resource('admin/teachers','TeachersController');
-
+    Route::resource('admin/class','EnClassContoller');
+    Route::get('/admin/class/create/ajax-state','EnClassContoller@ajax_1');
+    Route::get('/admin/class/create/ajax-state-2','EnClassContoller@ajax_2');
 });

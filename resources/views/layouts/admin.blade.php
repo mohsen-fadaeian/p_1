@@ -174,6 +174,14 @@
                         </ul>
                     </li>
 
+                    <li class="has_sub">
+                        <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-invert-colors"></i> <span> کلاس ها </span> <span class="menu-arrow"></span></a>
+                        <ul class="list-unstyled">
+                            <li><a href="{{route('class.index')}}">لیست کلاس ها</a></li>
+                            <li><a href="{{route('class.create')}}">ایجاد کلاس ها</a></li>
+                        </ul>
+                    </li>
+
 
                     <li class="has_sub">
                         <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-view-list"></i> <span> Tables </span> <span class="menu-arrow"></span></a>
