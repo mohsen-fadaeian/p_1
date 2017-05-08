@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Student;
-use App\User;
+use App\MainLevel;
+use App\Teacher;
 use Illuminate\Http\Request;
 
-class StudentsLoginController extends Controller
+class TeachersController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,9 @@ class StudentsLoginController extends Controller
      */
     public function index()
     {
-        $student_user = User::all();
-        return view('admin.students_login.index',compact('student_user'));
+        $teachers = Teacher::all();
+        $levels = MainLevel::pluck('name','id')->all();
+        return view('admin.teachers.index',compact('teachers','levels'));
     }
 
     /**
@@ -37,7 +38,8 @@ class StudentsLoginController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Teacher::create($request->all());
+        return redirect()->back();
     }
 
     /**
@@ -48,8 +50,8 @@ class StudentsLoginController extends Controller
      */
     public function show($id)
     {
-        $student_user = User::whereId($id)->get();
-        return view('admin.students_login.show',compact('student_user'));
+        $teachers = Teacher::whereId($id)->get();
+        return view('admin.teachers.show',compact('teachers'));
     }
 
     /**
@@ -60,8 +62,9 @@ class StudentsLoginController extends Controller
      */
     public function edit($id)
     {
-        $user = User::findOrfail($id);
-        return view('admin.students_login.edit',compact('user'));
+        $teachers = Teacher::findOrfail($id);
+        $mainlevel = MainLevel::pluck('name','id')->all();
+        return view('admin.teachers.edit',compact('teachers','mainlevel'));
     }
 
     /**
@@ -73,18 +76,8 @@ class StudentsLoginController extends Controller
      */
     public function update(Request $request, $id)
     {
-        if ($request->password == '')
-            {
-                $a = $request->except('password');
-            }
-        else
-            {
-                $a= $request->all();
-                $a['password'] = bcrypt($request->password);
-            }
-        $b = User::findOrfail($id);
-        $b->update($a);
-        return redirect('admin/students_login');
+        Teacher::findOrfail($id)->update($request->all());
+        return redirect('admin/teachers');
     }
 
     /**
@@ -95,6 +88,7 @@ class StudentsLoginController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Teacher::findOrfail($id)->delete();
+        return redirect('admin/teachers');
     }
 }

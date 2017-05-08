@@ -26,5 +26,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('admin/students_login','StudentsLoginController');
     Route::resource('admin/levels/mainlvl','MainLevelController');
     Route::resource('admin/levels/subslvl','SubsLevelController');
+    Route::resource('admin/teachers','TeachersController');
 
 });

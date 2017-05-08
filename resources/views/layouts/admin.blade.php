@@ -154,16 +154,23 @@
                     </li>
 
                     <li class="has_sub">
-                        <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-invert-colors"></i> <span> لیست مقاطع </span> <span class="menu-arrow"></span></a>
+                        <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-invert-colors"></i> <span> مقاطع </span> <span class="menu-arrow"></span></a>
                         <ul class="list-unstyled">
                             <li><a href="{{route('mainlvl.index')}}">لیست مقاطع دانش آموزان</a></li>
                         </ul>
                     </li>
 
                     <li class="has_sub">
-                        <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-invert-colors"></i> <span> لیست زیر مقاطع </span> <span class="menu-arrow"></span></a>
+                        <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-invert-colors"></i> <span> زیر مقاطع </span> <span class="menu-arrow"></span></a>
                         <ul class="list-unstyled">
                             <li><a href="{{route('subslvl.index')}}">لیست زیر مقاطع دانش آموزان</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="has_sub">
+                        <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-invert-colors"></i> <span> دبیران </span> <span class="menu-arrow"></span></a>
+                        <ul class="list-unstyled">
+                            <li><a href="{{route('teachers.index')}}">لیست دبیران</a></li>
                         </ul>
                     </li>
 
