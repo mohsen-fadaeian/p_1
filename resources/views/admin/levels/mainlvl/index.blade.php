@@ -72,6 +72,11 @@
                         @endforeach
                         </tbody>
                     </table>
+                    <div class="row">
+                        <div class="col-sm-6 col-sm-offset-4">
+                        {{$main_lvl->render()}}
+                        </div>
+                    </div>
                 @else
                     <div class="col-lg-12 m-t-20">
                         <div class="panel panel-color panel-info">

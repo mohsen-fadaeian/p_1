@@ -18,8 +18,8 @@
     <div class="row">
         <div class="col-lg-5 col-md-5">
             <div class="card-box">
-                <h3>افزودن زیر مقاطع دانش آموزان</h3>
-                {!! Form::open(['method'=>'POST' , 'action'=>'SubsLevelController@store']) !!}
+                <h3>افزودن مقاطع دانش آموزان</h3>
+                {!! Form::open(['method'=>'POST' , 'action'=>'MainLevelController@store']) !!}
                 <table class="table table-bordered">
                     <tbody>
                     <tr>
@@ -30,14 +30,8 @@
                     </tr>
                     <tr>
                         <div class="form-group">
-                            <th>{!! Form::label('order_subs','order_subs:') !!}</th>
-                            <td>{!! Form::number('order_subs' ,null ,['class'=>'form-control']) !!}</td>
-                        </div>
-                    </tr>
-                    <tr>
-                        <div class="form-group">
-                            <th>{!! Form::label('mainlevel_id','mainlevel_id:') !!}</th>
-                            <td>{!! Form::select('mainlevel_id' , $main_lvl ,null,['class'=>'form-control']) !!}</td>
+                            <th>{!! Form::label('order_lvl','order_lvl:') !!}</th>
+                            <td>{!! Form::number('order_lvl' ,null ,['class'=>'form-control']) !!}</td>
                         </div>
                     </tr>
                     </tbody>
@@ -50,41 +44,34 @@
         </div>
         <div class="col-lg-7 col-md-7">
             <div class="card-box">
-                <h3>لیست زیر مقاطع دانش آموزان</h3>
-                @if(count($sub_lvl) > 0)
+                <h3>لیست مقاطع دانش آموزان</h3>
+                @if(count($main_lvl) > 0)
                     <table class="table table-striped">
                         <thead>
                         <tr >
                             <th>id</th>
                             <th>name</th>
-                            <th>order_subs</th>
-                            <th>main_lvl</th>
+                            <th>order_lvl</th>
                             <th>Edit</th>
                             <th>Delete</th>
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($sub_lvl as $sub)
+                        @foreach($main_lvl as $main)
                             <tr>
-                                <td>{{$sub->id}}</td>
-                                <td>{{$sub->name}}</td>
-                                <td>{{$sub->order_subs}}</td>
-                                <td>{{$sub->mainlevel->name}}</td>
-                                <td><a class="btn btn-bordred btn-warning btn-sm text-white" href="{{route('subslvl.edit',$sub->id)}}">Edit</a></td>
+                                <td>{{$main->id}}</td>
+                                <td>{{$main->name}}</td>
+                                <td>{{$main->order_lvl}}</td>
+                                <td><a class="btn btn-bordred btn-warning col-sm-6 btn-sm text-white" href="{{route('mainlvl.edit',$main->id)}}">Edit</a></td>
                                 <td>
-                                    {!! Form::open(['method'=>'DELETE' , 'action'=>['SubsLevelController@destroy',$sub->id]]) !!}
-                                    {!! Form::submit('Delete Sub Level' ,['class'=>'btn btn-bordred btn-danger btn-sm text-white']) !!}
+                                    {!! Form::open(['method'=>'DELETE' , 'action'=>['MainLevelController@destroy',$main->id]]) !!}
+                                    {!! Form::submit('Delete Level' ,['class'=>'btn btn-bordred btn-danger col-sm-6 btn-sm text-white']) !!}
                                     {!! Form::close() !!}
                                 </td>
                             </tr>
                         @endforeach
                         </tbody>
                     </table>
-                    <div class="row">
-                        <div class="col-sm-6 col-sm-offset-4">
-                            {{$sub_lvl->render()}}
-                        </div>
-                    </div>
                 @else
                     <div class="col-lg-12 m-t-20">
                         <div class="panel panel-color panel-info">

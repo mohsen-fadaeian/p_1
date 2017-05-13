@@ -58,12 +58,6 @@
                             <td>{!! Form::number('home_number' ,null ,['class'=>'form-control']) !!}</td>
                         </div>
                     </tr>
-                    <tr>
-                        <div class="form-group">
-                            <th>{!! Form::label('teacher_id','teacher_id:') !!}</th>
-                            <td>{!! Form::number('teacher_id' ,null ,['class'=>'form-control']) !!}</td>
-                        </div>
-                    </tr>
 
                     <tr>
                         <div class="form-group">

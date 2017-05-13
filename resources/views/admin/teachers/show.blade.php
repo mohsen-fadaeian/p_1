@@ -68,6 +68,14 @@
                                     <td>{{$teacher->mainlevel->name}}</td>
                                 </tr>
                                 <tr>
+                                    <th class="col-sm-3">email :</th>
+                                    <td>{{$teacher->user->email}}</td>
+                                </tr>
+                                <tr>
+                                    <th class="col-sm-3">status :</th>
+                                    <td class="{{$teacher->user->status == 1 ? 'success' : 'warning'}}">{{$teacher->user->status == 1 ? 'Activated' : 'Disabled'}}</td>
+                                </tr>
+                                <tr>
                                     <th class="col-sm-3">Created :</th>
                                     <td>{{$teacher->created_at->diffForHumans()}}</td>
                                 </tr>
@@ -83,6 +91,9 @@
                             <div class="row text-center">
                                 <a href="{{route('teachers.edit',$teacher->id)}}" class="btn btn-bordred btn-lg btn-warning col-lg-4 col-sm-offset-2" > Edit! </a>
                                 <a href="{{route('teachers.index')}}" class="btn btn-bordred btn-lg btn-primary col-lg-4 col-sm-offset-2" > Back </a>
+                            </div>
+                            <div class="row text-center m-t-30">
+                                <a href="{{route('password.edit',$teacher->user_id)}}" class="btn btn-bordred btn-lg btn-warning col-lg-10 col-sm-offset-2" > Edit Password </a>
                             </div>
                         </div>
                         <div class="clearfix"></div>

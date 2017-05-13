@@ -22,12 +22,11 @@ class CreateStudentsTable extends Migration
             $table->string('first_name');
             $table->string('last_name');
             $table->string('address');
-            $table->string('email')->unique();
             $table->string('school_level');
             $table->string('sex');
             $table->string('dad_name');
             $table->date('birth_date');
-            $table->bigInteger('student_id');
+            $table->bigInteger('student_id')->unsigned()->unique();
             $table->timestamps();
 
 

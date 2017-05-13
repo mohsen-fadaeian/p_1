@@ -35,7 +35,6 @@ class StudentsRequest extends FormRequest
             'sex'=>'required',
             'dad_name'=>'required',
             'birth_date'=>'required',
-            'student_id'=>'required',
             'password'=>'required',
         ];
     }

@@ -9,6 +9,7 @@ class Teacher extends Model
     protected $fillable = [
         'f_name',
         'l_name',
+        'user_id',
         'address',
         'bio',
         'phone_number',
@@ -20,5 +21,9 @@ class Teacher extends Model
     public function mainlevel()
     {
         return $this->belongsTo('App\MainLevel','max_level');
+    }
+    public function user()
+    {
+        return $this->belongsTo('App\User');
     }
 }

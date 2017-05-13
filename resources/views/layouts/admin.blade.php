@@ -49,7 +49,7 @@
 
         <!-- LOGO -->
         <div class="topbar-left">
-            <a href="index.html" class="logo"><span>Admin<span>to</span></span><i class="zmdi zmdi-layers"></i></a>
+            <a href="{{url('admin')}}" class="logo"><span>Ferasat<span>Pajouh</span></span><i class="zmdi zmdi-layers"></i></a>
         </div>
 
         <!-- Button mobile view to collapse sidebar menu -->
@@ -109,22 +109,28 @@
             <!-- User -->
             <div class="user-box">
                 <div class="user-img">
-                    <img src="{{asset('images/users/avatar-1.jpg')}}" alt="user-img" title="Mat Helme" class="img-circle img-thumbnail img-responsive">
-                    <div class="user-status offline"><i class="zmdi zmdi-dot-circle"></i></div>
+                    <img src="{{asset('images/users/avatar-3.jpg')}}" alt="user-img" title="Mat Helme" class="img-circle img-thumbnail img-responsive">
                 </div>
-                <h5><a href="#">Mat Helme</a> </h5>
+                <h5><a href="#">Ferasat Administrator</a> </h5>
                 <ul class="list-inline">
                     <li>
+                        <i style="font-size: 2em; color: green" class="fa fa-unlock m-t-5"></i>
+                    </li>
+                </ul>
+                <ul class="list-inline">
+
+                    <li>
                         <a href="#" >
-                            <i class="zmdi zmdi-settings"></i>
+                            <i style="font-size: 2em; color: darkblue" class="zmdi zmdi-settings"></i>
                         </a>
                     </li>
 
                     <li>
                         <a href="#" class="text-custom">
-                            <i class="zmdi zmdi-power"></i>
+                            <i style="font-size: 2em; color: red" class="zmdi zmdi-power"></i>
                         </a>
                     </li>
+
                 </ul>
             </div>
             <!-- End User -->
@@ -135,63 +141,43 @@
                     <li class="text-muted menu-title">فهرست</li>
 
                     <li>
-                        <a href="{{url('admin')}}" class="waves-effect active"><i class="zmdi zmdi-view-dashboard"></i> <span> داشبورد </span> </a>
+                        <a href="{{url('admin')}}" class="waves-effect"><i class="zmdi zmdi-view-dashboard"></i> <span> داشبورد </span> </a>
                     </li>
 
                     <li class="has_sub">
-                        <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-invert-colors"></i> <span> مدیریت دانش آموزان </span> <span class="menu-arrow"></span></a>
+                        <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-gear"></i> <span> مدیریت دانش آموزان </span> <span class="menu-arrow"></span></a>
                         <ul class="list-unstyled">
-                            <li><a href="{{route('students.index')}}">لیست دانش آموزان</a></li>
-                            <li><a href="{{route('students.create')}}">افزودن دانش آموزان</a></li>
+                            <li><a href="{{route('students.index')}}"><i class="fa fa-list-ol"></i><span>لیست دانش آموزان</span></a></li>
+                            <li><a href="{{route('students.create')}}"><i class="fa fa-plus"></i><span>افزودن دانش آموزان</span></a></li>
+                            <li><a href="{{route('students_login.index')}}"><i class="fa fa-lock"></i><span>لیست رمز دانش آموزان</span></a></li>
+
                         </ul>
                     </li>
 
                     <li class="has_sub">
-                        <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-invert-colors"></i> <span> مدیریت رمز دانش آموزان </span> <span class="menu-arrow"></span></a>
+                        <a href="javascript:void(0);" class="waves-effect"><i class="fa  fa-sort-amount-asc"></i> <span> مقاطع </span> <span class="menu-arrow"></span></a>
                         <ul class="list-unstyled">
-                            <li><a href="{{route('students_login.index')}}">لیست رمز دانش آموزان</a></li>
+                            <li><a href="{{route('mainlvl.index')}}"><i class="fa fa-list-ol"></i><span>لیست مقاطع</span></a></li>
+                            <li><a href="{{route('subslvl.index')}}"><i class="fa fa-list-ol"></i><span>لیست زیر مقاطع</span></a></li>
+
                         </ul>
                     </li>
 
                     <li class="has_sub">
-                        <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-invert-colors"></i> <span> مقاطع </span> <span class="menu-arrow"></span></a>
+                        <a href="javascript:void(0);" class="waves-effect"><i class="fa  fa-users"></i> <span> دبیران </span> <span class="menu-arrow"></span></a>
                         <ul class="list-unstyled">
-                            <li><a href="{{route('mainlvl.index')}}">لیست مقاطع دانش آموزان</a></li>
+                            <li><a href="{{route('teachers.index')}}"><i class="fa fa-list-ol"></i><span>لیست دبیران</span></a></li>
                         </ul>
                     </li>
 
                     <li class="has_sub">
-                        <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-invert-colors"></i> <span> زیر مقاطع </span> <span class="menu-arrow"></span></a>
+                        <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-university"></i> <span> کلاس ها </span> <span class="menu-arrow"></span></a>
                         <ul class="list-unstyled">
-                            <li><a href="{{route('subslvl.index')}}">لیست زیر مقاطع دانش آموزان</a></li>
+                            <li><a href="{{route('class.index')}}"><i class="fa fa-list-ol"></i><span>لیست کلاس ها</span></a></li>
+                            <li><a href="{{route('class.create')}}"><i class="fa fa-plus"></i><span>ایجاد کلاس ها</span></a></li>
                         </ul>
                     </li>
 
-                    <li class="has_sub">
-                        <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-invert-colors"></i> <span> دبیران </span> <span class="menu-arrow"></span></a>
-                        <ul class="list-unstyled">
-                            <li><a href="{{route('teachers.index')}}">لیست دبیران</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="has_sub">
-                        <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-invert-colors"></i> <span> کلاس ها </span> <span class="menu-arrow"></span></a>
-                        <ul class="list-unstyled">
-                            <li><a href="{{route('class.index')}}">لیست کلاس ها</a></li>
-                            <li><a href="{{route('class.create')}}">ایجاد کلاس ها</a></li>
-                        </ul>
-                    </li>
-
-
-                    <li class="has_sub">
-                        <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-view-list"></i> <span> Tables </span> <span class="menu-arrow"></span></a>
-                        <ul class="list-unstyled">
-                            <li><a href="tables-basic.html">Basic Tables</a></li>
-                            <li><a href="tables-datatable.html">Data Table</a></li>
-                            <li><a href="tables-responsive.html">Responsive Table</a></li>
-                            <li><a href="tables-editable.html">Editable Table</a></li>
-                        </ul>
-                    </li>
 
 
                     <li>

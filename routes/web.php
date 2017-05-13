@@ -32,6 +32,9 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('admin/levels/subslvl','SubsLevelController');
     Route::resource('admin/teachers','TeachersController');
     Route::resource('admin/class','EnClassContoller');
+    Route::resource('admin/sing_st_class','AddStToClassController');
+    Route::resource('admin/teachers/password','TeacherPasswordController');
     Route::get('/admin/class/create/ajax-state','EnClassContoller@ajax_1');
     Route::get('/admin/class/create/ajax-state-2','EnClassContoller@ajax_2');
+
 });

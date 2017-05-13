@@ -28,16 +28,15 @@
                         <tr>
                             <th>id</th>
                             <th>en_class_id</th>
-                            <th>class_name</th>
-                            <th>class_start</th>
-                            <th>class_end</th>
-                            <th>start_time</th>
-                            <th>end_time</th>
+                            <th>term_start</th>
+                            <th>term_end</th>
+                            <th>final_date_time</th>
                             <th>main_level</th>
                             <th>sub_level</th>
                             <th>teacher_id</th>
                             <th>class_max_size</th>
                             <th>status</th>
+                            <th>Show</th>
                             <th>Edit</th>
 
                         </tr>
@@ -52,11 +51,9 @@
                             @endif
                                 <td>{{$class->id}}</td>
                                 <td>{{$class->en_class_id}}</td>
-                                <td>{{$class->class_name}}</td>
-                                <td>{{$class->class_start}}</td>
-                                <td>{{$class->class_end}}</td>
-                                <td>{{$class->start_time}}</td>
-                                <td>{{$class->end_time}}</td>
+                                <td>{{$class->term_start}}</td>
+                                <td>{{$class->term_end}}</td>
+                                <td>{{$class->final_date_time}}</td>
                                 <td>{{$class->mainlevel->name}}</td>
                                 <td>{{$class->sublevel->name}}</td>
                                 <td>{{$class->teacher->l_name}}</td>
@@ -67,12 +64,18 @@
                                     <td class="text-warning">Disable</td>
                                 @endif
 
-                                <td><a class="btn btn-bordred btn-primary btn-sm text-white" href="{{route('class.edit',$class->id)}}">Edit</a></td>
+                                <td><a class="btn btn-bordred btn-success btn-sm text-white" href="{{route('class.show',$class->id)}}">Show</a></td>
+                                <td><a class="btn btn-bordred btn-warning btn-sm text-white" href="{{route('class.edit',$class->id)}}">Edit</a></td>
                             </tr>
 
                         @endforeach
                         </tbody>
                     </table>
+                    <div class="row">
+                        <div class="col-sm-6 col-sm-offset-4">
+                            {{$enclass->render()}}
+                        </div>
+                    </div>
                 @else
                     <div class="col-lg-12 m-t-20">
                         <div class="panel panel-color panel-info">

@@ -14,7 +14,7 @@ class MainLevelController extends Controller
      */
     public function index()
     {
-        $main_lvl = MainLevel::all();
+        $main_lvl = MainLevel::paginate(10);
         return view('admin.levels.mainlvl.index',compact('main_lvl'));
     }
 

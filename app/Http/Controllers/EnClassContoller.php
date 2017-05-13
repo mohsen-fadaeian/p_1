@@ -18,7 +18,7 @@ class EnClassContoller extends Controller
      */
     public function index()
     {
-        $enclass = EnClass::all();
+        $enclass = EnClass::paginate(10);
         return view('admin.class.index',compact('enclass'));
     }
 
@@ -57,7 +57,10 @@ class EnClassContoller extends Controller
      */
     public function store(Request $request)
     {
-        EnClass::create($request->all());
+        $a =$request->all();
+        $a['en_class_id']=rand('100','999');
+
+        EnClass::create($a);
         return redirect('admin/class');
     }
 
@@ -69,7 +72,8 @@ class EnClassContoller extends Controller
      */
     public function show($id)
     {
-        //
+        $enclass = EnClass::findOrfail($id)->all();
+        return view('admin.class.show',compact('enclass'));
     }
 
     /**

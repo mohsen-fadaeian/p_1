@@ -20,7 +20,8 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->integer('status')->default(0);
             $table->integer('access')->default(0);
-            $table->integer('student_id')->unsigned()->nullable();
+            $table->bigInteger('student_id')->unsigned()->nullable();
+            $table->bigInteger('teacher_id')->unsigned()->nullable();
             $table->rememberToken();
             $table->timestamps();
 

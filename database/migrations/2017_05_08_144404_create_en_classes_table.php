@@ -15,10 +15,15 @@ class CreateEnClassesTable extends Migration
     {
         Schema::create('en_classes', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('en_class_id');
+            $table->string('en_class_id')->unique();;
             $table->string('class_name');
-            $table->date('class_start');
-            $table->date('class_end');
+            $table->date('term_start');
+            $table->date('term_end');
+            $table->string('final_date_time');
+            $table->string('class_start_end_time_1')->nullable();
+            $table->string('class_start_end_time_2')->nullable();
+            $table->string('class_start_end_time_3')->nullable();
+            $table->string('class_start_end_time_4')->nullable();
             $table->integer('main_level');
             $table->integer('sub_level');
             $table->integer('teacher_id');

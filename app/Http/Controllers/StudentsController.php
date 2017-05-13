@@ -16,7 +16,7 @@ class StudentsController extends Controller
      */
     public function index()
     {
-        $students = Student::all();
+        $students = Student::paginate();
         return view('admin.students.index',compact('students'));
     }
 
@@ -42,6 +42,7 @@ class StudentsController extends Controller
             'name'=>($request->first_name).'_'.($request->last_name),
             'email'=>$request->email,
             'password'=>bcrypt($request->password),
+            'access'=>1,
         ];
         $user = User::create($user_data);
 
@@ -58,12 +59,12 @@ class StudentsController extends Controller
             'sex'=>$request->sex,
             'dad_name'=>$request->dad_name,
             'birth_date'=>$request->birth_date,
-            'student_id'=>$request->student_id
+            'student_id'=>rand(100000, 999999)
         ];
         $st = Student::create($student_data);
 
         $user_data2 = [
-            'student_id'=>$st->id
+            'student_id'=>$st->student_id
         ];
         User::findOrfail($user->id)->update($user_data2);
 
@@ -101,13 +102,11 @@ class StudentsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(StudentsRequest $request, $id)
+    public function update(Request $request, $id)
     {
         $user_data = [
             'name'=>($request->first_name).'_'.($request->last_name),
             'email'=>$request->email,
-            'password'=>bcrypt($request->password),
-            'student_id'=>Student::findOrfail($id)->id
         ];
         User::findOrfail(Student::findOrfail($id)->user_id)->update($user_data);
 
@@ -118,12 +117,10 @@ class StudentsController extends Controller
             'first_name'=>$request->first_name,
             'last_name'=>$request->last_name,
             'address'=>$request->address,
-            'email'=>$request->email,
             'school_level'=>$request->school_level,
             'sex'=>$request->sex,
             'dad_name'=>$request->dad_name,
             'birth_date'=>$request->birth_date,
-            'student_id'=>$request->student_id
         ];
         Student::findOrfail($id)->update($student_data);
 

@@ -63,7 +63,7 @@
                     </tr>
                     <tr>
                         <th class="col-sm-3">email :</th>
-                        <td>{{$student->email}}</td>
+                        <td>{{$student->user->email}}</td>
                     </tr>
                     <tr>
                         <th class="col-sm-3">school_level :</th>

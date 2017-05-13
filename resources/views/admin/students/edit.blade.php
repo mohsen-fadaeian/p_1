@@ -82,12 +82,6 @@
                         </tr>
                         <tr>
                             <div class="form-group">
-                                <th>{!! Form::label('password','password:') !!}</th>
-                                <td>{!! Form::password('password' ,['class'=>'form-control']) !!}</td>
-                            </div>
-                        </tr>
-                        <tr>
-                            <div class="form-group">
                                 <th>{!! Form::label('school_level','school_level:') !!}</th>
                                 <td>{!! Form::select('school_level' ,['L' => 'Large', 'S' => 'Small'],null,['class'=>'form-control'],['placeholder' => 'Pick a size...']) !!}</td>
                             </div>
@@ -108,12 +102,6 @@
                             <div class="form-group">
                                 <th>{!! Form::label('birth_date','birth_date:') !!}</th>
                                 <td>{!! Form::date('birth_date' ,null ,['class'=>'form-control']) !!}</td>
-                            </div>
-                        </tr>
-                        <tr>
-                            <div class="form-group">
-                                <th>{!! Form::label('student_id','student_id:') !!}</th>
-                                <td>{!! Form::number('student_id' ,null ,['class'=>'form-control']) !!}</td>
                             </div>
                         </tr>
                         </tbody>

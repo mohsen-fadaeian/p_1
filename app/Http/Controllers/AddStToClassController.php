@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Student;
-use App\User;
 use Illuminate\Http\Request;
 
-class StudentsLoginController extends Controller
+class AddStToClassController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +13,7 @@ class StudentsLoginController extends Controller
      */
     public function index()
     {
-        $student_user = User::where('access', '=','1')->get();
-        return view('admin.students_login.index',compact('student_user'));
-
+        //
     }
 
     /**
@@ -49,8 +45,7 @@ class StudentsLoginController extends Controller
      */
     public function show($id)
     {
-        $student_user = User::whereId($id)->get();
-        return view('admin.students_login.show',compact('student_user'));
+        //
     }
 
     /**
@@ -61,8 +56,7 @@ class StudentsLoginController extends Controller
      */
     public function edit($id)
     {
-        $user = User::findOrfail($id);
-        return view('admin.students_login.edit',compact('user'));
+        //
     }
 
     /**
@@ -74,18 +68,7 @@ class StudentsLoginController extends Controller
      */
     public function update(Request $request, $id)
     {
-        if ($request->password == '')
-            {
-                $a = $request->except('password');
-            }
-        else
-            {
-                $a= $request->all();
-                $a['password'] = bcrypt($request->password);
-            }
-        $b = User::findOrfail($id);
-        $b->update($a);
-        return redirect('admin/students_login');
+        //
     }
 
     /**

@@ -36,7 +36,7 @@
                         </thead>
                         <tbody>
                         @foreach($student_user as $user)
-                            <tr>
+                            <tr class="{{$user->status == 1 ? 'success' : 'warning'}}">
                                 <td>{{$user->student->id}}</td>
                                 <td>{{$user->student->first_name}}</td>
                                 <td>{{$user->student->last_name}}</td>

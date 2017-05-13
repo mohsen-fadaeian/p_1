@@ -9,15 +9,18 @@ class EnClass extends Model
     protected $fillable = [
         'en_class_id',
         'class_name',
-        'class_start',
-        'class_end',
+        'term_start',
+        'term_end',
+        'final_date_time',
+        'class_start_end_time_1',
+        'class_start_end_time_2',
+        'class_start_end_time_3',
+        'class_start_end_time_4',
         'main_level',
         'sub_level',
         'teacher_id',
         'status',
         'class_max_size',
-        'start_time',
-        'end_time'
     ];
 
     public function sublevel()

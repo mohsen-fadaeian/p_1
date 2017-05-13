@@ -31,10 +31,14 @@
                             </tr>
                             <tr>
                                 <th>first_name</th>
-                                <td>{{$user->name}}</td>
+                                <td>{{$user->student->first_name}}</td>
                             </tr>
                             <tr>
                                 <th>last_name</th>
+                                <td>{{$user->student->last_name}}</td>
+                            </tr>
+                            <tr>
+                                <th>Email</th>
                                 <td>{{$user->email}}</td>
                             </tr>
                             <tr>

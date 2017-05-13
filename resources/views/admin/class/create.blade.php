@@ -48,22 +48,50 @@
                         </tr>
                         <tr>
                             <div class="form-group">
-                                <th>{!! Form::label('en_class_id','en_class_id:') !!}</th>
-                                <td>{!! Form::number('en_class_id' ,null ,['class'=>'form-control']) !!}</td>
+                                <th>{!! Form::label('term_start','term_start:') !!}</th>
+                                <td>{!! Form::date('term_start' ,null ,['class'=>'form-control']) !!}</td>
                             </div>
                         </tr>
                         <tr>
                             <div class="form-group">
-                                <th>{!! Form::label('class_start','class_start:') !!}</th>
-                                <td>{!! Form::date('class_start' ,null ,['class'=>'form-control']) !!}</td>
+                                <th>{!! Form::label('term_end','term_end:') !!}</th>
+                                <td>{!! Form::date('term_end' ,null ,['class'=>'form-control']) !!}</td>
                             </div>
                         </tr>
                         <tr>
                             <div class="form-group">
-                                <th>{!! Form::label('class_end','class_end:') !!}</th>
-                                <td>{!! Form::date('class_end' ,null ,['class'=>'form-control']) !!}</td>
+                                <th>{!! Form::label('final_date_time','final_date_time:') !!}</th>
+                                <td><input type="datetime-local" name="final_date_time" id="final-date_time" class="form-control"></td>
                             </div>
                         </tr>
+                        <tr>
+                            <div class="form-group">
+                                <th>{!! Form::label('class_start_end_time_1','class_start_end_time_1:') !!}</th>
+                                <td>{!! Form::text('class_start_end_time_1' ,null ,['placeholder'=>'4shanbe/8:00/10:00','class'=>'form-control']) !!}</td>
+                            </div>
+                        </tr>
+
+                        <tr>
+                            <div class="form-group">
+                                <th>{!! Form::label('class_start_end_time_2','class_start_end_time_2:') !!}</th>
+                                <td>{!! Form::text('class_start_end_time_2' ,null ,['class'=>'form-control']) !!}</td>
+                            </div>
+                        </tr>
+
+                        <tr>
+                            <div class="form-group">
+                                <th>{!! Form::label('class_start_end_time_3','class_start_end_time_3:') !!}</th>
+                                <td>{!! Form::text('class_start_end_time_3' ,null ,['class'=>'form-control']) !!}</td>
+                            </div>
+                        </tr>
+
+                        <tr>
+                            <div class="form-group">
+                                <th>{!! Form::label('class_start_end_time_4','class_start_end_time_4:') !!}</th>
+                                <td>{!! Form::text('class_start_end_time_4' ,null ,['class'=>'form-control']) !!}</td>
+                            </div>
+                        </tr>
+
                         <tr>
                             <div class="form-group">
                                 <th>{!! Form::label('main_level','main_level:') !!}</th>
@@ -83,7 +111,7 @@
 
                         <tr>
                             <div class="form-group">
-                                <th><label>sub_level</label></th>
+                                <th><label>teacher_id</label></th>
                                 <th>
                                     <select id="teacher_id" class="form-control input-sm" name="teacher_id">
                                         <option value=""></option>
@@ -96,20 +124,6 @@
                             <div class="form-group">
                                 <th>{!! Form::label('class_max_size','class_max_size:') !!}</th>
                                 <td>{!! Form::number('class_max_size' ,null ,['class'=>'form-control']) !!}</td>
-                            </div>
-                        </tr>
-
-                        <tr>
-                            <div class="form-group">
-                                <th>{!! Form::label('start_time','start_time:') !!}</th>
-                                <td>{!! Form::time('start_time' ,null ,['class'=>'form-control']) !!}</td>
-                            </div>
-                        </tr>
-
-                        <tr>
-                            <div class="form-group">
-                                <th>{!! Form::label('end_time','end_time:') !!}</th>
-                                <td>{!! Form::time('end_time' ,null ,['class'=>'form-control']) !!}</td>
                             </div>
                         </tr>
 

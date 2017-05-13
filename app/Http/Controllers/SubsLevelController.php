@@ -15,7 +15,7 @@ class SubsLevelController extends Controller
      */
     public function index()
     {
-        $sub_lvl = SubsLevel::all();
+        $sub_lvl = SubsLevel::paginate(10);;
         $main_lvl = MainLevel::pluck('name','id')->all();
         return view('admin.levels.subslvl.index',compact('sub_lvl','main_lvl'));
     }

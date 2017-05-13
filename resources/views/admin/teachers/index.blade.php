@@ -58,10 +58,25 @@
                             <td>{!! Form::number('home_number' ,null ,['class'=>'form-control']) !!}</td>
                         </div>
                     </tr>
+
                     <tr>
                         <div class="form-group">
-                            <th>{!! Form::label('teacher_id','teacher_id:') !!}</th>
-                            <td>{!! Form::number('teacher_id' ,null ,['class'=>'form-control']) !!}</td>
+                            <th>{!! Form::label('email','email:') !!}</th>
+                            <td>{!! Form::email('email' ,null ,['class'=>'form-control']) !!}</td>
+                        </div>
+                    </tr>
+
+                    <tr>
+                        <div class="form-group">
+                            <th>{!! Form::label('password','password:') !!}</th>
+                            <td>{!! Form::password('password' ,['class'=>'form-control']) !!}</td>
+                        </div>
+                    </tr>
+
+                    <tr>
+                        <div class="form-group">
+                            <th>{!! Form::label('status','status:') !!}</th>
+                            <td>{!! Form::select('status' ,array('1'=>'Activated','0'=>'Disabled'),null ,['class'=>'form-control']) !!}</td>
                         </div>
                     </tr>
 
@@ -107,6 +122,11 @@
                         @endforeach
                         </tbody>
                     </table>
+                    <div class="row">
+                        <div class="col-sm-6 col-sm-offset-4">
+                            {{$teachers->render()}}
+                        </div>
+                    </div>
                 @else
                     <div class="col-lg-12 m-t-20">
                         <div class="panel panel-color panel-info">

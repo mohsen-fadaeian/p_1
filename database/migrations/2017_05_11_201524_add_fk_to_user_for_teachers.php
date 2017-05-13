@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddTimesToEnClass extends Migration
+class AddFkToUserForTeachers extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,8 @@ class AddTimesToEnClass extends Migration
      */
     public function up()
     {
-        Schema::table('en_classes', function (Blueprint $table) {
-            $table->time('start_time');
-            $table->time('end_time');
+        Schema::table('users', function (Blueprint $table) {
+            $table->foreign('teacher_id')->references('teacher_id')->on('teachers')->onDelete('cascade');
         });
     }
 
@@ -26,9 +25,8 @@ class AddTimesToEnClass extends Migration
      */
     public function down()
     {
-        Schema::table('en_classes', function (Blueprint $table) {
-            $table->dropColumn('start_time');
-            $table->dropColumn('end_time');
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropForeign(['teacher_id']);
         });
     }
 }
