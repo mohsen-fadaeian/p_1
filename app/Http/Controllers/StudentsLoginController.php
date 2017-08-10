@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\SingStClass;
 use App\Student;
 use App\User;
 use Illuminate\Http\Request;
@@ -17,7 +18,6 @@ class StudentsLoginController extends Controller
     {
         $student_user = User::where('access', '=','1')->get();
         return view('admin.students_login.index',compact('student_user'));
-
     }
 
     /**
@@ -27,7 +27,6 @@ class StudentsLoginController extends Controller
      */
     public function create()
     {
-        //
     }
 
     /**
@@ -38,7 +37,6 @@ class StudentsLoginController extends Controller
      */
     public function store(Request $request)
     {
-        //
     }
 
     /**
@@ -96,6 +94,6 @@ class StudentsLoginController extends Controller
      */
     public function destroy($id)
     {
-        //
+
     }
 }

@@ -17,10 +17,10 @@ class CreateSingStClassesTable extends Migration
             $table->increments('id');
             $table->integer('class_id');
             $table->integer('student_id');
-            $table->integer('classes_grate');
-            $table->integer('final_grate');
-            $table->integer('ave_grate');
-            $table->integer('pass_or_fail');
+            $table->integer('classes_grate')->nullable();
+            $table->integer('final_grate')->nullable();
+            $table->integer('ave_grate')->nullable();
+            $table->integer('pass_or_fail')->nullable();
             $table->integer('teacher_id');
             $table->integer('main_level');
             $table->integer('sub_level');

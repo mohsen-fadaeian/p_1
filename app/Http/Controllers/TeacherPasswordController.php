@@ -15,7 +15,6 @@ class TeacherPasswordController extends Controller
      */
     public function index()
     {
-        //
     }
 
     /**
@@ -25,7 +24,6 @@ class TeacherPasswordController extends Controller
      */
     public function create()
     {
-        //
     }
 
     /**
@@ -36,7 +34,6 @@ class TeacherPasswordController extends Controller
      */
     public function store(Request $request)
     {
-        //
     }
 
     /**
@@ -47,7 +44,6 @@ class TeacherPasswordController extends Controller
      */
     public function show($id)
     {
-        //
     }
 
     /**
@@ -90,6 +86,5 @@ class TeacherPasswordController extends Controller
      */
     public function destroy($id)
     {
-        //
     }
 }

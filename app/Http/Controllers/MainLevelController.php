@@ -25,7 +25,6 @@ class MainLevelController extends Controller
      */
     public function create()
     {
-
     }
 
     /**
@@ -48,7 +47,6 @@ class MainLevelController extends Controller
      */
     public function show($id)
     {
-        //
     }
 
     /**

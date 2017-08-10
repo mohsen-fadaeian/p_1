@@ -20,6 +20,7 @@ class StudentsController extends Controller
         return view('admin.students.index',compact('students'));
     }
 
+
     /**
      * Show the form for creating a new resource.
      *

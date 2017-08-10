@@ -12,7 +12,7 @@
 
     <!--Morris Chart CSS -->
     <link rel="stylesheet" href="{{asset('plugins/morris/morris.css')}}">
-    <!-- App css -->
+    {{--<!-- App css -->--}}
 
     <link href="{{asset('css/bootstrap-rtl.min.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{asset('css/core.css')}}" rel="stylesheet" type="text/css" />
@@ -21,6 +21,10 @@
     <link href="{{asset('css/pages.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{asset('css/menu.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{asset('css/responsive.css')}}" rel="stylesheet" type="text/css" />
+    {{--<!-- selectize -->--}}
+    {{--<link rel="stylesheet" type="text/css" href="{{asset('css/selectize.bootstrap3.css')}}" />--}}
+    {{--<script type="text/javascript" src="{{asset('js/selectize.js')}}"></script>--}}
+
 
     @yield('styles')
 
@@ -178,6 +182,14 @@
                         </ul>
                     </li>
 
+                    <li class="has_sub">
+                        <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-university"></i> <span> ثبت زبان آموز در کلاس </span> <span class="menu-arrow"></span></a>
+                        <ul class="list-unstyled">
+                            <li><a href="{{route('sing_st_class.index')}}"><i class="fa fa-list-ol"></i><span>لیست زبان آموز در کلاس</span></a></li>
+                            <li><a href="{{route('sing_st_class.create')}}"><i class="fa fa-plus"></i><span>ثبت</span></a></li>
+                        </ul>
+                    </li>
+
 
 
                     <li>
@@ -308,8 +320,8 @@
 </script>
 
 <!-- jQuery  -->
-
 <script src="{{asset('js/jquery.min.js')}}"></script>
+
 <script src="{{asset('js/bootstrap-rtl.min.js')}}"></script>
 <script src="{{asset('js/detect.js')}}"></script>
 <script src="{{asset('js/fastclick.js')}}"></script>

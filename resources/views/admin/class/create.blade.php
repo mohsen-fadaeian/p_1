@@ -159,7 +159,7 @@
             var state_id = e.target.value;
 
             //for sub_levels control
-            $.get('http://shop.dev/admin/class/create/ajax-state?state_id=' + state_id, function(data) {
+            $.get('{{url('')}}/admin/class/create/ajax-state?state_id=' + state_id, function(data) {
                 console.log(data);
                 $('#sub_level').empty();
                 $.each(data, function(index,subCatObj){
@@ -168,7 +168,7 @@
             });
 
             //for teachers control
-            $.get('http://shop.dev/admin/class/create/ajax-state-2?main_level=' + state_id, function(data) {
+            $.get('{{url('')}}/admin/class/create/ajax-state-2?main_level=' + state_id, function(data) {
                 console.log(data);
                 $('#teacher_id').empty();
                 $.each(data, function(index,subCatObj){

@@ -12,28 +12,26 @@
 
 @endsection
 
-
 {{-- Contents Section --}}
 @section('content')
-
     <div class="row">
 
-        <div class="col-lg-12 col-md-12">
+        <div class="col-lg-12 col-md-12" id="hideing_st_list">
             <div class="card-box">
                 <h2>لیست دانش آموزان</h2>
                 @if(count($students) > 0)
-                <table class="table table-striped">
+                    <table class="table table-striped">
 
-                    <thead>
-                    <tr>
-                        <th>id</th>
-                        <th>first_name</th>
-                        <th>last_name</th>
-                        <th>Student_id</th>
-                        <th>show</th>
-                    </tr>
-                    </thead>
-                    <tbody>
+                        <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>first_name</th>
+                            <th>last_name</th>
+                            <th>Student_id</th>
+                            <th>show</th>
+                        </tr>
+                        </thead>
+                        <tbody>
                         @foreach($students as $student)
                             <tr>
                                 <td>{{$student->id}}</td>
@@ -43,8 +41,8 @@
                                 <td><a class="btn btn-bordred btn-primary btn-sm text-white" href="{{route('students.show',$student->id)}}">show</a></td>
                             </tr>
                         @endforeach
-                    </tbody>
-                </table>
+                        </tbody>
+                    </table>
                     <div class="row">
                         <div class="col-sm-6 col-sm-offset-4">
                             {{$students->render()}}
@@ -58,7 +56,7 @@
                             </div>
                             <div class="panel-body">
                                 <p>
-                                     No Students Record exist
+                                    No Students Record exist
                                 </p>
                             </div>
                         </div>
@@ -75,4 +73,11 @@
 
 {{-- Scripts Section --}}
 @section('scripts')
+    <script>
+        function showing ()
+        {
+            var htmltag =  document.getElementById('hideing_st_list');
+            if (htmltag.style.display === 'none') { htmltag.style.display = 'block'; }else{ htmltag.style.display = 'none'; }
+        }
+    </script>
 @endsection

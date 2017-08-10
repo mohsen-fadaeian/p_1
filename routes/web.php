@@ -37,4 +37,14 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/admin/class/create/ajax-state','EnClassContoller@ajax_1');
     Route::get('/admin/class/create/ajax-state-2','EnClassContoller@ajax_2');
 
+    Route::get('/admin/sing_st_class/create/ajax-state','AddStToClassController@ajax_1');
+    Route::get('/admin/sing_st_class/create/ajax-state-2','AddStToClassController@ajax_2');
+
+    Route::get('/admin/sing_st_class/edit/ajax-state','AddStToClassController@ajax_1');
+    Route::get('/admin/sing_st_class/edit/ajax-state-2','AddStToClassController@ajax_2');
+
+    Route::post('/admin/sing_st_class/preview','AddStToClassController@prestore');
+    Route::post('/admin/sing_st_class/preupdate','AddStToClassController@preupdate');
+
+
 });

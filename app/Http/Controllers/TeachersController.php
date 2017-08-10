@@ -29,7 +29,6 @@ class TeachersController extends Controller
      */
     public function create()
     {
-        //
     }
 
     /**
@@ -89,7 +88,6 @@ class TeachersController extends Controller
     public function edit($id)
     {
         $teachers = Teacher::findOrfail($id);
-
         $mainlevel = MainLevel::pluck('name','id')->all();
         return view('admin.teachers.edit',compact('teachers','mainlevel'));
     }

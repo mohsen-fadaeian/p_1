@@ -27,7 +27,6 @@ class SubsLevelController extends Controller
      */
     public function create()
     {
-        //
     }
 
     /**
@@ -50,7 +49,6 @@ class SubsLevelController extends Controller
      */
     public function show($id)
     {
-        //
     }
 
     /**
